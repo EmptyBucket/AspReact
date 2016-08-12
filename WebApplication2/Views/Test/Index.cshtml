@@ -1,0 +1,13 @@
+@using Newtonsoft.Json.Linq
+@{
+    var assets = (dynamic) JObject.Parse(File.ReadAllText(Server.MapPath("~/webpack-assets.json")));
+}
+
+<head>
+    <link rel="stylesheet" href="@assets.testBootstrap.css"/>
+</head>
+<div id="container">
+
+</div>
+<script type="text/javascript" src="@assets.common.js"></script>
+<script type="text/javascript" src="@assets.testBootstrap.js"></script>
